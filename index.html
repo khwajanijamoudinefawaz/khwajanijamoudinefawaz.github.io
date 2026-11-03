@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio BTS SIO SISR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--surface:#fff;--ink:#12233a;--muted:#55657a;--line:#cfd8e3;--accent:#0e7c86;--accent-ink:#fff;--hl:#f2c14e;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b2b;--surface:#16273d;--ink:#e8eef6;--muted:#9fb0c4;--line:#2a3f59;--accent:#4cc3cd;--accent-ink:#0f1b2b;--hl:#f2c14e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1b2b;--surface:#16273d;--ink:#e8eef6;--muted:#9fb0c4;--line:#2a3f59;--accent:#4cc3cd;--accent-ink:#0f1b2b;--hl:#f2c14e;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.9rem;font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:10}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--surface);border-bottom:1px solid var(--line);display:flex;gap:.25rem;overflow-x:auto;padding:.5rem 1rem}
+nav a{white-space:nowrap;text-decoration:none;color:var(--ink);padding:.4rem .8rem;border-radius:6px;font-weight:600;font-size:.95rem}
+nav a:hover{background:var(--bg)}
+main{max-width:980px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0 1rem;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.hero{padding-top:4rem}
+.hero .tag{display:inline-block;background:var(--hl);color:#12233a;font-weight:600;padding:.2rem .7rem;border-radius:4px;margin-bottom:1rem}
+.hero p.lead{font-size:1.25rem;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:.6rem 1.1rem;border-radius:6px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.1rem 1.2rem}
+.box h3{margin-bottom:.3rem}
+.box p{margin:.3rem 0;color:var(--muted);font-size:.98rem}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:.05rem .6rem;font-size:.85rem;margin:.15rem .2rem .15rem 0;color:var(--muted)}
+.todo{background:color-mix(in srgb,var(--hl) 35%,transparent);padding:0 .25rem;border-radius:3px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical-align:top;font-size:.96rem}
+th{background:var(--bg)}
+ul{padding-left:1.2rem;margin:0 0 1em}
+li{margin:.25rem 0}
+form{display:grid;gap:.7rem;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.1rem;margin-bottom:1.2rem}
+label{display:grid;gap:.2rem;font-weight:600;font-size:.95rem}
+input,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:.5rem .6rem;width:100%}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem}
+.fiche{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:1rem 1.2rem;margin-bottom:.8rem}
+.fiche .meta{color:var(--muted);font-size:.9rem;margin-bottom:.4rem}
+.fiche button{background:none;border:0;color:var(--muted);cursor:pointer;text-decoration:underline;font:inherit;font-size:.9rem;padding:0}
+footer{text-align:center;color:var(--muted);padding:2.5rem 1rem;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Navigation">
+<a href="#accueil">Accueil</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#stages">Stages</a><a href="#veille">Veille</a><a href="#contact">Contact</a>
+</nav>
+<main>
+
+<section id="accueil" class="hero">
+<span class="tag">BTS SIO option SISR</span>
+<h1><span class="todo">Prénom Nom</span></h1>
+<p class="lead">Étudiant en BTS Services informatiques aux organisations, option Solutions d’infrastructure, systèmes et réseaux. Ma veille technologique porte sur les agents IA et leur place dans l’administration des systèmes.</p>
+<p><span class="todo">Écris ici 3 ou 4 phrases : ton parcours, ce qui t’a mené à l’informatique, ce que tu cherches (alternance, poursuite d’études…).</span></p>
+<div class="btns"><a class="btn" href="#veille">Voir ma veille</a><a class="btn alt" href="#projets">Mes projets</a></div>
+</section>
+
+<section id="projets">
+<h2>Projets et réalisations</h2>
+<p>Pour chaque projet : le contexte, le besoin, la solution mise en place, les outils, les difficultés et le résultat. Ajoute un schéma réseau et des captures en annexe.</p>
+<div class="grid">
+<article class="box"><h3>Active Directory, DNS et DHCP</h3><p><span class="todo">Contexte et besoin</span></p><p>Installation d’un domaine, de comptes, de GPO et de partages.</p><span class="pill">Windows Server</span><span class="pill">AD DS</span><span class="pill">GPO</span></article>
+<article class="box"><h3>Parc informatique avec GLPI</h3><p><span class="todo">Contexte et besoin</span></p><p>Inventaire du matériel et gestion des tickets d’assistance.</p><span class="pill">GLPI</span><span class="pill">OCS / FusionInventory</span></article>
+<article class="box"><h3>Pare-feu et VLAN</h3><p><span class="todo">Contexte et besoin</span></p><p>Segmentation du réseau, règles de filtrage et accès distant.</p><span class="pill">pfSense</span><span class="pill">VLAN</span><span class="pill">VPN</span></article>
+<article class="box"><h3>Supervision</h3><p><span class="todo">Contexte et besoin</span></p><p>Surveillance des serveurs et alertes automatiques.</p><span class="pill">Zabbix</span><span class="pill">SNMP</span></article>
+<article class="box"><h3>Virtualisation et sauvegarde</h3><p><span class="todo">Contexte et besoin</span></p><p>Hébergement de machines virtuelles et plan de sauvegarde.</p><span class="pill">Proxmox</span><span class="pill">Veeam</span></article>
+</div>
+<p style="margin-top:1rem"><span class="todo">Remplace ces exemples par tes vrais projets.</span></p>
+</section>
+
+<section id="competences">
+<h2>Tableau de compétences</h2>
+<p>Relie chaque projet ou stage aux compétences du référentiel.</p>
+<div class="scroll"><table>
+<tr><th>Compétence</th><th>Projet ou stage</th><th>Preuve</th></tr>
+<tr><td>Gérer le patrimoine informatique</td><td>GLPI</td><td><span class="todo">Capture, fiche</span></td></tr>
+<tr><td>Répondre aux incidents et aux demandes</td><td>Stage, tickets GLPI</td><td><span class="todo">Capture, fiche</span></td></tr>
+<tr><td>Travailler en mode projet</td><td><span class="todo">Projet</span></td><td><span class="todo">Planning, compte rendu</span></td></tr>
+<tr><td>Mettre à disposition un service informatique</td><td>AD, DHCP, DNS</td><td><span class="todo">Documentation</span></td></tr>
+<tr><td>Organiser son développement professionnel</td><td>Veille technologique</td><td>Fiches de veille ci-dessous</td></tr>
+<tr><td>Concevoir une solution d’infrastructure réseau</td><td>pfSense, VLAN</td><td><span class="todo">Schéma réseau</span></td></tr>
+<tr><td>Exploiter, dépanner et superviser</td><td>Zabbix</td><td><span class="todo">Captures</span></td></tr>
+</table></div>
+</section>
+
+<section id="stages">
+<h2>Stages</h2>
+<div class="grid">
+<article class="box"><h3><span class="todo">Entreprise, 1re année</span></h3><p><span class="todo">Dates, lieu, missions, ce que tu as appris.</span></p></article>
+<article class="box"><h3><span class="todo">Entreprise, 2e année</span></h3><p><span class="todo">Dates, lieu, missions, ce que tu as appris.</span></p></article>
+</div>
+</section>
+
+<section id="veille">
+<h2>Veille technologique : les agents IA</h2>
+<p><strong>Question de départ :</strong> comment les agents IA vont-ils changer le travail d’un administrateur systèmes et réseaux ?</p>
+
+<h3>Qu’est-ce qu’un agent IA ?</h3>
+<p>Un chatbot répond à une question. Un agent IA reçoit un objectif, le découpe en étapes, utilise des outils (scripts, API, terminal, base de connaissances) et enchaîne les actions jusqu’au résultat, avec une part d’autonomie. Il s’appuie sur un modèle de langage pour raisonner et décider de la suite.</p>
+
+<h3>Intérêt pour un technicien SISR</h3>
+<div class="grid" style="margin-bottom:1.5rem">
+<div class="box"><h3>Automatisation</h3><p>Génération et exécution de scripts PowerShell ou Bash, création de comptes, tâches répétitives.</p></div>
+<div class="box"><h3>Support</h3><p>Tri et résolution de premier niveau des tickets, recherche dans la documentation interne.</p></div>
+<div class="box"><h3>Supervision et sécurité</h3><p>Analyse des journaux, corrélation d’alertes, aide au diagnostic d’incidents.</p></div>
+<div class="box"><h3>Intégration d’outils</h3><p>Des protocoles comme MCP permettent à un agent de se connecter à des services (fichiers, tickets, bases de données).</p></div>
+</div>
+
+<h3>Risques et limites</h3>
+<ul>
+<li>Droits d’accès trop larges donnés à l’agent : appliquer le moindre privilège.</li>
+<li>Erreurs et réponses inventées : toute action sensible doit être validée par un humain.</li>
+<li>Fuite de données et conformité RGPD quand des informations internes sont envoyées à un service externe.</li>
+<li>Injection de prompt : un contenu malveillant peut détourner l’agent.</li>
+</ul>
+
+<h3>Ma méthode de veille</h3>
+<div class="grid" style="margin-bottom:1.5rem">
+<div class="box"><h3>Outils</h3><p>Flux RSS (Feedly), alertes Google, newsletters.</p></div>
+<div class="box"><h3>Sources</h3><p>Blogs d’Anthropic, OpenAI et Microsoft, LeMagIT, ZDNet France, Korben, ANSSI, LinkedIn.</p></div>
+<div class="box"><h3>Fréquence</h3><p><span class="todo">Ex : 2 fois par semaine, 30 minutes</span></p></div>
+</div>
+
+<h3>Mes fiches de veille</h3>
+<p>Ajoute une fiche à chaque article lu. Elles sont enregistrées dans ce navigateur : utilise toujours le même appareil et le même navigateur, et garde une copie des fiches importantes ailleurs.</p>
+<form id="f">
+<div class="row">
+<label>Titre de l’article<input id="titre" required></label>
+<label>Date<input id="date" type="date" required></label>
+<label>Source<input id="source" required placeholder="Nom du site ou lien"></label>
+</div>
+<label>Résumé en quelques lignes<textarea id="resume" rows="3" required></textarea></label>
+<label>Intérêt pour mon métier<textarea id="interet" rows="2"></textarea></label>
+<div><button class="btn" type="submit">Ajouter la fiche</button></div>
+</form>
+<div id="liste" aria-live="polite"></div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p><span class="todo">email@exemple.fr</span> · <a href="#contact"><span class="todo">LinkedIn</span></a> · <a href="#contact"><span class="todo">GitHub</span></a> · <a href="#contact"><span class="todo">CV (PDF)</span></a></p>
+</section>
+
+</main>
+<footer>Portfolio BTS SIO SISR</footer>
+
+<script>
+(function(){
+var KEY="veille-fiches";
+var liste=document.getElementById("liste");
+function charger(){try{var v=localStorage.getItem(KEY);return v?JSON.parse(v):[]}catch(e){return []}}
+function sauver(a){try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x)n.textContent=x;return n}
+function fmt(d){try{return new Date(d+"T12:00:00").toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})}catch(e){return d}}
+function afficher(){
+var a=charger();liste.textContent="";
+if(!a.length){liste.appendChild(el("p","","Aucune fiche pour l’instant. Remplis le formulaire pour ajouter la première."));return}
+a.sort(function(x,y){return y.date.localeCompare(x.date)});
+a.forEach(function(f){
+var d=el("article","fiche");
+d.appendChild(el("h3","",f.titre));
+d.appendChild(el("div","meta",fmt(f.date)+" – "+f.source));
+d.appendChild(el("p","",f.resume));
+if(f.interet){var p=el("p");var s=el("strong","","Intérêt pour mon métier : ");p.appendChild(s);p.appendChild(document.createTextNode(f.interet));d.appendChild(p)}
+var b=el("button","","Supprimer la fiche");b.type="button";
+b.onclick=function(){sauver(charger().filter(function(x){return x.id!==f.id}));afficher()};
+d.appendChild(b);liste.appendChild(d)});
+}
+document.getElementById("f").addEventListener("submit",function(e){
+e.preventDefault();
+var a=charger();
+a.push({id:Date.now(),titre:titre.value.trim(),date:date.value,source:source.value.trim(),resume:resume.value.trim(),interet:interet.value.trim()});
+sauver(a);this.reset();afficher();
+});
+afficher();
+})();
+</script>
+</body>
+</html>
